@@ -1,0 +1,19 @@
+.value{
+    color: #007bff;
+    font-size: 1.5rem;
+    display: block;
+    font-weight: 500;
+    line-height: 1;
+}
+
+
+// noEdit
+.noEdit .form-group:not(:last-child) {
+    border-bottom: 1px dashed #ddd;
+    padding-bottom: 23px;
+}
+.noEdit .form-group label {
+    color: #9E9E9E;
+    line-height: 1;
+    margin-bottom: 5px;
+}

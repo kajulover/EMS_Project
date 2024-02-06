@@ -1,0 +1,42 @@
+.profile{
+    position: relative;
+    cursor: pointer;
+}
+.profile-popup{
+    position: absolute;
+    opacity: 0;
+    visibility: hidden;
+    transition: .3s ease all;
+    z-index: 1;
+    background: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    padding: 6px 0;
+    right: 0;
+    top: calc(100% + 10px);
+    min-width: 200px;
+}
+.profile:hover .profile-popup{
+    opacity: 1;
+    visibility: visible;
+}
+.profile-popup ul{
+    list-style-type: none;
+    padding: 0;
+}
+
+.profile-popup ul li:not(:last-child){
+    border-bottom: 1px dashed #ddd;
+}
+.profile-popup ul li a{
+    color: #7b7b7b;
+    padding: 7px 20px;
+    display: block;
+}
+.profile-popup ul li a:hover{
+    text-decoration: none;
+    background: #f5f5f5;
+}
+body {
+    margin-top: 10px;
+}

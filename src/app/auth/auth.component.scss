@@ -1,0 +1,113 @@
+h1{border: 0}
+
+form {
+    width: 300px;
+    margin: auto;
+}
+
+
+.card-auth{
+    box-shadow: 0 0 20px rgb(0, 0, 0);
+    margin-top: 30px;
+    border-radius: 5px;
+    padding: 30px 0 70px;
+}
+
+
+// --------- fBox (Starts)------------ //
+
+.fBox{
+    width: 800px;
+    margin: 0 auto;
+}
+
+.divider-text {
+    height: 100%;
+}
+.divider-text span {
+    background: #fff;
+    padding: 7px;
+    font-size: 12px;
+    position: absolute;
+    z-index: 2;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.divider-text:after {
+    content: "";
+    position: absolute;
+    height: 100%;
+    border-left: 1px dashed #ddd;
+    top: 0;
+    left: 50%;
+    z-index: 1;
+    transform: translateX(-50%);
+    border-right: 1px solid #fff;
+}
+
+.social-btns a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 15px;
+    transition: .3s ease all;
+}
+.social-btns a svg {
+    width: 16px;
+    margin-right: 6px;
+}
+
+// .social-btns a {
+//     background: rgba(255, 255, 255, 0.44);
+//     color: rgba(0, 0, 0, 0.87);
+//     border-color: rgba(0, 0, 0, 0.34);
+// }
+
+.btn-google {
+    // background: rgba(234, 67, 53, 0.05);
+    // color: #ea4335;
+    // border-color: inherit;
+
+    background: rgba(255, 255, 255, 0.44);
+    color: rgba(0, 0, 0, 0.87);
+    border-color: rgba(0, 0, 0, 0.34);
+}
+.btn-google:hover {
+    background: rgba(234, 67, 53, 0.05);
+    color: #ea4335;
+    border-color: inherit;
+}
+
+.btn-facebook {
+    // background-color: rgba(37, 127, 243, 0.05);
+    // color: #1877f2;
+    // border-color: inherit;
+
+    background: rgba(255, 255, 255, 0.44);
+    color: rgba(0, 0, 0, 0.87);
+    border-color: rgba(0, 0, 0, 0.34);
+}
+.btn-facebook:hover {
+    background-color: rgba(37, 127, 243, 0.05);
+    
+    color: #1877f2;
+    border-color: inherit;
+}
+
+.btn-twitter {
+    // background: rgba(29, 161, 242, 0.05);
+    // color: #42AEEC;
+    // border-color: inherit;
+
+    background: rgba(255, 255, 255, 0.44);
+    color: rgba(0, 0, 0, 0.87);
+    border-color: rgba(0, 0, 0, 0.34);
+}
+.btn-twitter:hover {
+    background: rgba(29, 161, 242, 0.05);
+
+    color: #42AEEC;
+    border-color: inherit;
+}
+// ---------- fBox (Ends)------------- //

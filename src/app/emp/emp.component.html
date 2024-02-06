@@ -1,0 +1,96 @@
+
+<!-- <div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h2>Employee Detail</h2>
+            <div class="col ml-auto text-right">
+                <button type="button" (click)="onEditEmployee()" class="btn btn-outline-success"><i class="fa fa-pencil"></i> Edit Employee</button></div>
+        
+            <hr>
+
+            <div class="item" *ngIf="emp">
+                <div class="avatar">
+                    <img src="assets/images/avatar.svg" width="50">
+                </div>
+                <div class="name">
+                    <span class="label">Name :</span> {{emp.name}}
+                </div>
+                <div class="designation">
+                    <span class="label">Designation :</span> {{emp.designation}}
+                </div>
+                <div class="designation">
+                    <span class="label">Department :</span> {{emp.dept}}
+                </div>
+                <div class="status">
+                    <span class="label">Status : </span> <span class="badge"
+                        [ngClass]="{'badge-success': emp.status =='Active', 'badge-danger' : emp.status !='Active'}">{{emp.status}}</span>
+                </div>
+                <div class="details mt-2">
+                    <a routerLink="/dashboard" class="btn btn-outline-success btn-sm">Back to Dashboard</a>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div> -->
+
+
+<div class="col-md-8 card shadhow px-3 py-3">
+    <div class="col-md-12">
+        <div class="row">
+            <div class="col">
+                <h4>Employee Details</h4>
+            </div>
+            <div class="col ml-auto text-right">
+                <button (click)="editMode=true" type="button" class="btn edit"><i class="fa fa-pencil btn-sm"></i></button>
+            </div>
+        </div>
+        <hr>
+        <div class="item">
+            <div class="col ml-auto text-center">
+                <div class="avatar">
+                    <img src="assets/images/avatar.svg" width="150px" alt="">
+                </div>
+            </div>
+            <br><br>
+            <div class="form-group-wraper">
+                <div class="row">
+                    <div class="col">
+                        <div class="form-group">
+                            <label for="">Name : </label>
+                            <span *ngIf="!editMode" class="value">{{emp.name}}</span>
+                            <input *ngIf="editMode" type="text" value="{{emp.name}}" class="form-control" disabled>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="form-group">
+                            <label for="">Designation : </label>
+                            <span *ngIf="!editMode" class="value">{{emp.designation}}</span>
+                            <input *ngIf="editMode" type="text" value="{{emp.designation}}" class="form-control">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <div class="form-group">
+                            <label for="">Department : </label>
+                            <span *ngIf="!editMode" class="value">{{emp.dept}}</span>
+                            <input *ngIf="editMode" type="text" value="{{emp.dept}}" class="form-control">
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="form-group">
+                            <label for="">Status : </label>
+                            <span *ngIf="!editMode" class="value">{{emp.status}}</span>
+                            <input *ngIf="editMode" type="text" value="{{emp.status}}" class="form-control">
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <div class="details mt-2">
+                    <a routerLink="/dashboard" class="btn btn-outline-success btn-sm">Back To Dashboard</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
