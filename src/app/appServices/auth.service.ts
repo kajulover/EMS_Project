@@ -17,7 +17,7 @@ import { FacebookLoginProvider, GoogleLoginProvider } from "angularx-social-logi
 export class AuthService {
 
   // user = new Subject <User>();
-  user = new BehaviorSubject <User>(null);
+ user = new BehaviorSubject <User>(null);
  profileInfo = new BehaviorSubject ({
   displayName:'',
   email:'',

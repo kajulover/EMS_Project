@@ -18,8 +18,14 @@ import { ProfileComponent } from './profile/profile.component';
 import { ChangeComponent } from './password/change/change.component';
 import { ForgetComponent } from './password/forget/forget.component';
 import { authInterceptor } from './auth/auth.interceptor';
-import { SocialLoginModule, SocialAuthServiceConfig } from 'angularx-social-login';
-import { GoogleLoginProvider, FacebookLoginProvider } from 'angularx-social-login';
+import {
+  SocialLoginModule,
+  SocialAuthServiceConfig,
+} from 'angularx-social-login';
+import {
+  GoogleLoginProvider,
+  FacebookLoginProvider,
+} from 'angularx-social-login';
 import { HomeComponent } from './home/home.component';
 
 @NgModule({
@@ -32,7 +38,7 @@ import { HomeComponent } from './home/home.component';
     ProfileComponent,
     ChangeComponent,
     ForgetComponent,
-    HomeComponent
+    HomeComponent,
   ],
   imports: [
     BrowserModule,
@@ -42,35 +48,37 @@ import { HomeComponent } from './home/home.component';
     HttpClientModule,
     BrowserAnimationsModule,
     LoadingBarModule,
-    LoadingBarHttpClientModule,  // for HttpClient use
-    SocialLoginModule
+    LoadingBarHttpClientModule, // for HttpClient use
+    SocialLoginModule,
   ],
-  providers: [{
-    provide: HTTP_INTERCEPTORS,
-    useClass: authInterceptor,
-    multi: true
-  },
-  {
-    provide: 'SocialAuthServiceConfig',
-    useValue: {
-      autoLogin: false,
-      providers: [
-        {
-          id: GoogleLoginProvider.PROVIDER_ID,
-          provider: new GoogleLoginProvider(
-            '943248642040-0obcn4hb05kf8t3thtss64j2knv4ikir.apps.googleusercontent.com'
-          )
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: authInterceptor,
+      multi: true,
+    },
+    {
+      provide: 'SocialAuthServiceConfig',
+      useValue: {
+        autoLogin: false,
+        providers: [
+          {
+            id: GoogleLoginProvider.PROVIDER_ID,
+            provider: new GoogleLoginProvider(
+              '943248642040-0obcn4hb05kf8t3thtss64j2knv4ikir.apps.googleusercontent.com'
+            ),
+          },
+          {
+            id: FacebookLoginProvider.PROVIDER_ID,
+            provider: new FacebookLoginProvider('clientId'),
+          },
+        ],
+        onError: (err) => {
+          console.error(err);
         },
-        {
-          id: FacebookLoginProvider.PROVIDER_ID,
-          provider: new FacebookLoginProvider('clientId')
-        }
-      ],
-      onError: (err) => {
-        console.error(err);
-      }
-    } as SocialAuthServiceConfig,
-  }],
-  bootstrap: [AppComponent]
+      } as SocialAuthServiceConfig,
+    },
+  ],
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
